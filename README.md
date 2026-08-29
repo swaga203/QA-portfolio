@@ -55,3 +55,35 @@ Examples of bug reports, test cases, and API tests for Manual QA.
 
 <img width="1084" height="775" alt="bug functional high" src="https://github.com/user-attachments/assets/d1606dd2-be4d-4804-99a2-77dc400799c2" />
 
+---
+
+## Test Cases Samples (SauceDemo - Checkout Flow)
+
+### Test Case #1: Successful order placement with valid data
+
+- **Preconditions:** User is logged in as standard_user and is on the main page (/inventory.html).
+- **Priority:** High
+
+**Steps:**
+1. Click "Add to cart" on "Sauce Labs Backpack".
+2. Click on the Cart icon in the top right corner.
+3. Click the "Checkout" button.
+4. Fill in the form: First Name = John, Last Name = Doe, Zip/Postal Code = 12345.
+5. Click the "Continue" button.
+6. Click the "Finish" button.
+
+**Expected Result:** Overview page redirects to /checkout-complete.html showing the message "Thank you for your order!".
+
+---
+
+### Test Case #2: Attempting checkout with an empty First Name field
+
+- **Preconditions:** User has added at least one item to the cart and navigated to the Checkout page (/checkout-step-one.html).
+- **Priority:** Medium
+
+**Steps:**
+1. Leave "First Name" blank.
+2. Enter Last Name = Doe and Zip/Postal Code = 12345.
+3. Click the "Continue" button.
+
+**Expected Result:** The order process is blocked, and an error message "Error: First Name is required" is displayed.
